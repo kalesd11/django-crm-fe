@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* =========================
+   THEME VARIABLES
+========================= */
+
+:root {
+  --bg-main: #f2f0f0;
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  --border-color: #e5e7eb;
+  --text-main: #111827;
+  --accent: #2563eb;
+}
+
+/* ===== DARK THEME ===== */
+body[data-theme="dark"] {
+  --bg-main: #0b1220;
+  --bg-glass: rgba(15, 23, 42, 0.85);
+  --border-color: #2563eb;
+  --text-main: #e5e7eb;
+  --accent: #3b82f6;
+}
+
+/* ===== GREEN THEME ===== */
+body[data-theme="green"] {
+  --bg-main: #f0fdf4;
+  --bg-glass: rgba(240, 253, 244, 0.85);
+  --border-color: #22c55e;
+  --text-main: #064e3b;
+  --accent: #16a34a;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+@layer components {
+  .glass-header {
+    @apply px-6 py-5 flex justify-between items-center 
+           transition-all duration-300 rounded-2xl;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+  }
+
+  .glass-effect {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+  }
+
+  .card {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+}
